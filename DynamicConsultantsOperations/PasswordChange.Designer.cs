@@ -1,6 +1,6 @@
 ﻿namespace DynamicConsultantsOperations
 {
-    partial class Login
+    partial class PasswordChange
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,18 @@
         {
             this.bodyPanel = new System.Windows.Forms.Panel();
             this.loginPanel = new System.Windows.Forms.Panel();
-            this.btnShowPassword = new System.Windows.Forms.Button();
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.txtOldPassword = new System.Windows.Forms.TextBox();
+            this.lblOldPassword = new System.Windows.Forms.Label();
+            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
+            this.lblConfirmPassword = new System.Windows.Forms.Label();
+            this.btnChangePassword = new System.Windows.Forms.Button();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPass = new System.Windows.Forms.Label();
             this.headPanel = new System.Windows.Forms.Panel();
             this.lblHeading = new System.Windows.Forms.Label();
+            this.hideShowPassword = new System.Windows.Forms.CheckBox();
             this.bodyPanel.SuspendLayout();
             this.loginPanel.SuspendLayout();
             this.headPanel.SuspendLayout();
@@ -51,9 +55,8 @@
             this.bodyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bodyPanel.Location = new System.Drawing.Point(0, 0);
             this.bodyPanel.Name = "bodyPanel";
-            this.bodyPanel.Size = new System.Drawing.Size(800, 505);
-            this.bodyPanel.TabIndex = 0;
-            this.bodyPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.bodyPanel_Paint);
+            this.bodyPanel.Size = new System.Drawing.Size(800, 483);
+            this.bodyPanel.TabIndex = 1;
             // 
             // loginPanel
             // 
@@ -61,37 +64,72 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.loginPanel.BackColor = System.Drawing.Color.Black;
-            this.loginPanel.Controls.Add(this.btnShowPassword);
-            this.loginPanel.Controls.Add(this.btnLogin);
+            this.loginPanel.Controls.Add(this.hideShowPassword);
+            this.loginPanel.Controls.Add(this.txtOldPassword);
+            this.loginPanel.Controls.Add(this.lblOldPassword);
+            this.loginPanel.Controls.Add(this.txtConfirmPassword);
+            this.loginPanel.Controls.Add(this.lblConfirmPassword);
+            this.loginPanel.Controls.Add(this.btnChangePassword);
             this.loginPanel.Controls.Add(this.txtPass);
             this.loginPanel.Controls.Add(this.txtUsername);
             this.loginPanel.Controls.Add(this.lblUsername);
             this.loginPanel.Controls.Add(this.lblPass);
             this.loginPanel.Location = new System.Drawing.Point(119, 143);
             this.loginPanel.Name = "loginPanel";
-            this.loginPanel.Size = new System.Drawing.Size(581, 303);
+            this.loginPanel.Size = new System.Drawing.Size(581, 354);
             this.loginPanel.TabIndex = 1;
             this.loginPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.loginPanel_Paint);
             // 
-            // btnShowPassword
+            // txtOldPassword
             // 
-            this.btnShowPassword.Location = new System.Drawing.Point(510, 156);
-            this.btnShowPassword.Name = "btnShowPassword";
-            this.btnShowPassword.Size = new System.Drawing.Size(59, 23);
-            this.btnShowPassword.TabIndex = 6;
-            this.btnShowPassword.Text = "Show Password";
-            this.btnShowPassword.UseVisualStyleBackColor = true;
-            this.btnShowPassword.Click += new System.EventHandler(this.btnShowPassword_Click);
+            this.txtOldPassword.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOldPassword.Location = new System.Drawing.Point(285, 81);
+            this.txtOldPassword.Name = "txtOldPassword";
+            this.txtOldPassword.PasswordChar = '*';
+            this.txtOldPassword.Size = new System.Drawing.Size(203, 29);
+            this.txtOldPassword.TabIndex = 10;
             // 
-            // btnLogin
+            // lblOldPassword
             // 
-            this.btnLogin.Location = new System.Drawing.Point(217, 241);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(131, 26);
-            this.btnLogin.TabIndex = 5;
-            this.btnLogin.Text = "Log In";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.lblOldPassword.AutoSize = true;
+            this.lblOldPassword.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOldPassword.ForeColor = System.Drawing.Color.Wheat;
+            this.lblOldPassword.Location = new System.Drawing.Point(28, 79);
+            this.lblOldPassword.Name = "lblOldPassword";
+            this.lblOldPassword.Size = new System.Drawing.Size(232, 31);
+            this.lblOldPassword.TabIndex = 9;
+            this.lblOldPassword.Text = "Enter Old Password";
+            // 
+            // txtConfirmPassword
+            // 
+            this.txtConfirmPassword.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmPassword.Location = new System.Drawing.Point(285, 224);
+            this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.PasswordChar = '*';
+            this.txtConfirmPassword.Size = new System.Drawing.Size(203, 29);
+            this.txtConfirmPassword.TabIndex = 8;
+            // 
+            // lblConfirmPassword
+            // 
+            this.lblConfirmPassword.AutoSize = true;
+            this.lblConfirmPassword.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfirmPassword.ForeColor = System.Drawing.Color.Wheat;
+            this.lblConfirmPassword.Location = new System.Drawing.Point(28, 222);
+            this.lblConfirmPassword.Name = "lblConfirmPassword";
+            this.lblConfirmPassword.Size = new System.Drawing.Size(218, 31);
+            this.lblConfirmPassword.TabIndex = 7;
+            this.lblConfirmPassword.Text = "Re-enter Password";
+            this.lblConfirmPassword.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // btnChangePassword
+            // 
+            this.btnChangePassword.Location = new System.Drawing.Point(209, 302);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.Size = new System.Drawing.Size(131, 26);
+            this.btnChangePassword.TabIndex = 5;
+            this.btnChangePassword.Text = "Change Password";
+            this.btnChangePassword.UseVisualStyleBackColor = true;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // txtPass
             // 
@@ -105,7 +143,7 @@
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(285, 71);
+            this.txtUsername.Location = new System.Drawing.Point(285, 20);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(203, 29);
             this.txtUsername.TabIndex = 3;
@@ -115,7 +153,7 @@
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.Wheat;
-            this.lblUsername.Location = new System.Drawing.Point(28, 71);
+            this.lblUsername.Location = new System.Drawing.Point(28, 20);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(189, 31);
             this.lblUsername.TabIndex = 2;
@@ -144,29 +182,37 @@
             // 
             // lblHeading
             // 
-            this.lblHeading.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHeading.AutoSize = true;
             this.lblHeading.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeading.ForeColor = System.Drawing.Color.Wheat;
             this.lblHeading.Location = new System.Drawing.Point(285, 40);
             this.lblHeading.Name = "lblHeading";
-            this.lblHeading.Size = new System.Drawing.Size(222, 31);
+            this.lblHeading.Size = new System.Drawing.Size(265, 31);
             this.lblHeading.TabIndex = 0;
-            this.lblHeading.Text = "Log In to Continue";
-            this.lblHeading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblHeading.Text = "Change Your Password";
             // 
-            // Login
+            // hideShowPassword
+            // 
+            this.hideShowPassword.AutoSize = true;
+            this.hideShowPassword.ForeColor = System.Drawing.Color.White;
+            this.hideShowPassword.Location = new System.Drawing.Point(501, 155);
+            this.hideShowPassword.Name = "hideShowPassword";
+            this.hideShowPassword.Size = new System.Drawing.Size(53, 17);
+            this.hideShowPassword.TabIndex = 11;
+            this.hideShowPassword.Text = "Show";
+            this.hideShowPassword.UseVisualStyleBackColor = true;
+            this.hideShowPassword.CheckedChanged += new System.EventHandler(this.hideShowPassword_CheckedChanged);
+            // 
+            // PasswordChange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.ClientSize = new System.Drawing.Size(800, 505);
+            this.BackColor = System.Drawing.SystemColors.ControlText;
+            this.ClientSize = new System.Drawing.Size(800, 483);
             this.Controls.Add(this.bodyPanel);
-            this.Name = "Login";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Log In";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "PasswordChange";
+            this.Text = "PasswordChange";
             this.bodyPanel.ResumeLayout(false);
             this.loginPanel.ResumeLayout(false);
             this.loginPanel.PerformLayout();
@@ -180,14 +226,17 @@
 
         private System.Windows.Forms.Panel bodyPanel;
         private System.Windows.Forms.Panel loginPanel;
-        private System.Windows.Forms.Panel headPanel;
-        private System.Windows.Forms.Label lblHeading;
+        private System.Windows.Forms.Label lblConfirmPassword;
+        private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblPass;
-        private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Button btnShowPassword;
+        private System.Windows.Forms.Panel headPanel;
+        private System.Windows.Forms.Label lblHeading;
+        private System.Windows.Forms.TextBox txtConfirmPassword;
+        private System.Windows.Forms.TextBox txtOldPassword;
+        private System.Windows.Forms.Label lblOldPassword;
+        private System.Windows.Forms.CheckBox hideShowPassword;
     }
 }
-
