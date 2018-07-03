@@ -24,10 +24,11 @@ namespace DynamicConsultantsOperations
         {
             if (authentication(txtUsername.Text, txtPass.Text))
             {
-                this.Hide();
+                
                 username = txtUsername.Text;
+                DashBoardMaster.uname = username;
                 DashBoardMaster dashBoard = new DashBoardMaster();
-                dashBoard.uname = txtUsername.Text;
+                this.Hide();
                 dashBoard.Show();
             } 
             else

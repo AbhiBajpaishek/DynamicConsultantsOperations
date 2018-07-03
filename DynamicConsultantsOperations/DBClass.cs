@@ -45,7 +45,7 @@ namespace DynamicConsultantsOperations
             SqlCommand cmd = new SqlCommand("updateProcedure", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@name", name);
-            cmd.Parameters.AddWithValue("@email", email);           
+            cmd.Parameters.AddWithValue("@email", email);     
             cmd.Parameters.AddWithValue("@age", age);
             cmd.Parameters.AddWithValue("@gender", gender);
             cmd.Parameters.AddWithValue("@password", password);
@@ -90,7 +90,6 @@ namespace DynamicConsultantsOperations
             cmd.Parameters.AddWithValue("@password", password);
             cmd.Parameters.AddWithValue("@registeredBy", registeredBy);
             cmd.Parameters.AddWithValue("@date", DateTime.Now.ToString());
-
             if (conn.State == ConnectionState.Closed)
             {
                 conn.Open();

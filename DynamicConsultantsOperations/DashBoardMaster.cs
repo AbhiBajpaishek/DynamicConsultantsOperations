@@ -12,13 +12,14 @@ namespace DynamicConsultantsOperations
 {
     public partial class DashBoardMaster : Form
     {
-        public String uname;
+        public static  String uname;
         Registration registration = new Registration();
         PasswordChange passwordChange = new PasswordChange();
         public DashBoardMaster()
         {
             InitializeComponent();
-            registration.uname = uname;
+            registration.uname = DashBoardMaster.uname;
+            logOutToolStripMenuItem.Text = uname + " Log Out";
             registration.TopLevel = false;
             registration.Parent = this;
             childPanel.Controls.Add(registration);
@@ -56,6 +57,11 @@ namespace DynamicConsultantsOperations
             this.Hide();
             login.Show();
             
+        }
+
+        private void childPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

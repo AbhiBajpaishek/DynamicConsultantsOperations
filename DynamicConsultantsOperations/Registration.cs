@@ -27,11 +27,11 @@ namespace DynamicConsultantsOperations
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if (validationCheck(txtName.Text, txtPass.Text))
+            if (validationCheck(txtPass.Text, txtConfirmPass.Text)==false)
             {
                 MessageBox.Show("Passwords didn't match");
             }
-            else if(emptyCheck())
+            else if(emptyCheck()&&txtPass.Text!="")
             {//if the fields aren't empty it will chekc for existing data or fresh registration
                 if(db.ReadBulkData("select Name from Tbl_Registration where Email= '" + txtMail.Text + "';").Rows.Count>0)
                 {//for update
@@ -43,7 +43,7 @@ namespace DynamicConsultantsOperations
                 }
                 else
                 {//for fresh registration
-                    if (db.spRegistration(txtName.Text, txtMail.Text, txtAge.Text, genderCheck(), txtPass.Text, "Admin"))
+                    if (db.spRegistration(txtName.Text, txtMail.Text, txtAge.Text, genderCheck(), txtPass.Text,uname))
                         MessageBox.Show("Registration Succesfull");
                     else
                         MessageBox.Show("Failure");
@@ -174,6 +174,22 @@ namespace DynamicConsultantsOperations
         private void tableLayoutPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (btnShowPassword.Text == "Show")
+            {
+                txtPass.PasswordChar = '\0';
+                txtConfirmPass.PasswordChar = '\0';
+                btnShowPassword.Text = "Hide";
+            }
+            else
+            {
+                txtPass.PasswordChar = '*';
+                txtConfirmPass.PasswordChar = '*';
+                btnShowPassword.Text = "Show";
+            }
         }
     }
 }

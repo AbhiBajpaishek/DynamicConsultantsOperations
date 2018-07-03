@@ -49,6 +49,7 @@
             this.childPanel.Name = "childPanel";
             this.childPanel.Size = new System.Drawing.Size(1209, 450);
             this.childPanel.TabIndex = 3;
+            this.childPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.childPanel_Paint);
             // 
             // menuStrip1
             // 

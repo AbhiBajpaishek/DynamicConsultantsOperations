@@ -33,7 +33,7 @@
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.topPanel = new System.Windows.Forms.Panel();
-            this.btnShowPassword = new System.Windows.Forms.Button();
+            this.btnRegister = new System.Windows.Forms.Button();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.txtAge = new System.Windows.Forms.TextBox();
             this.txtConfirmPass = new System.Windows.Forms.TextBox();
@@ -45,11 +45,11 @@
             this.lblConfirmPass = new System.Windows.Forms.Label();
             this.lblAge = new System.Windows.Forms.Label();
             this.lblGender = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
             this.genderPanel = new System.Windows.Forms.Panel();
             this.femaleRadio = new System.Windows.Forms.RadioButton();
             this.maleRadio = new System.Windows.Forms.RadioButton();
-            this.btnRegister = new System.Windows.Forms.Button();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.btnShowPassword = new System.Windows.Forms.CheckBox();
             this.bodyPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.registrationDataGridView)).BeginInit();
             this.topPanel.SuspendLayout();
@@ -75,6 +75,8 @@
             this.registrationDataGridView.AllowUserToAddRows = false;
             this.registrationDataGridView.AllowUserToDeleteRows = false;
             this.registrationDataGridView.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.registrationDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.registrationDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.registrationDataGridView.BackgroundColor = System.Drawing.Color.DarkGoldenrod;
             this.registrationDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.registrationDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -85,7 +87,7 @@
             this.registrationDataGridView.Location = new System.Drawing.Point(0, 450);
             this.registrationDataGridView.Name = "registrationDataGridView";
             this.registrationDataGridView.ReadOnly = true;
-            this.registrationDataGridView.Size = new System.Drawing.Size(800, 114);
+            this.registrationDataGridView.Size = new System.Drawing.Size(928, 114);
             this.registrationDataGridView.TabIndex = 1;
             this.registrationDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.registrationDataGridView_CellContentClick);
             // 
@@ -117,16 +119,16 @@
             this.topPanel.TabIndex = 0;
             this.topPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.topPanel_Paint);
             // 
-            // btnShowPassword
+            // btnRegister
             // 
-            this.btnShowPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnShowPassword.Location = new System.Drawing.Point(823, 212);
-            this.btnShowPassword.Name = "btnShowPassword";
-            this.btnShowPassword.Size = new System.Drawing.Size(59, 23);
-            this.btnShowPassword.TabIndex = 7;
-            this.btnShowPassword.Text = "Show Password";
-            this.btnShowPassword.UseVisualStyleBackColor = true;
-            this.btnShowPassword.Click += new System.EventHandler(this.btnShowPassword_Click);
+            this.btnRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnRegister.Location = new System.Drawing.Point(380, 404);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(195, 37);
+            this.btnRegister.TabIndex = 1;
+            this.btnRegister.Text = "Register/Update";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // tableLayoutPanel
             // 
@@ -265,15 +267,6 @@
             this.lblGender.TabIndex = 5;
             this.lblGender.Text = "Select Gender";
             // 
-            // txtName
-            // 
-            this.txtName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtName.Location = new System.Drawing.Point(287, 13);
-            this.txtName.Multiline = true;
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(335, 24);
-            this.txtName.TabIndex = 6;
-            // 
             // genderPanel
             // 
             this.genderPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -307,16 +300,26 @@
             this.maleRadio.Text = "Male";
             this.maleRadio.UseVisualStyleBackColor = true;
             // 
-            // btnRegister
+            // txtName
             // 
-            this.btnRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnRegister.Location = new System.Drawing.Point(380, 404);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(195, 37);
-            this.btnRegister.TabIndex = 1;
-            this.btnRegister.Text = "Register/Update";
-            this.btnRegister.UseVisualStyleBackColor = true;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            this.txtName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtName.Location = new System.Drawing.Point(287, 13);
+            this.txtName.Multiline = true;
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(335, 24);
+            this.txtName.TabIndex = 6;
+            // 
+            // btnShowPassword
+            // 
+            this.btnShowPassword.AutoSize = true;
+            this.btnShowPassword.ForeColor = System.Drawing.Color.Black;
+            this.btnShowPassword.Location = new System.Drawing.Point(835, 213);
+            this.btnShowPassword.Name = "btnShowPassword";
+            this.btnShowPassword.Size = new System.Drawing.Size(53, 17);
+            this.btnShowPassword.TabIndex = 7;
+            this.btnShowPassword.Text = "Show";
+            this.btnShowPassword.UseVisualStyleBackColor = true;
+            this.btnShowPassword.CheckedChanged += new System.EventHandler(this.btnShowPassword_CheckedChanged);
             // 
             // Registration
             // 
@@ -362,8 +365,8 @@
         private System.Windows.Forms.RadioButton maleRadio;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.DataGridView registrationDataGridView;
-        private System.Windows.Forms.Button btnShowPassword;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.CheckBox btnShowPassword;
     }
 }

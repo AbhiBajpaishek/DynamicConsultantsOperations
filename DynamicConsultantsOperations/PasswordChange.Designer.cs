@@ -83,7 +83,7 @@
             // 
             this.hideShowPassword.AutoSize = true;
             this.hideShowPassword.ForeColor = System.Drawing.Color.White;
-            this.hideShowPassword.Location = new System.Drawing.Point(501, 155);
+            this.hideShowPassword.Location = new System.Drawing.Point(515, 144);
             this.hideShowPassword.Name = "hideShowPassword";
             this.hideShowPassword.Size = new System.Drawing.Size(53, 17);
             this.hideShowPassword.TabIndex = 11;
@@ -94,7 +94,7 @@
             // txtOldPassword
             // 
             this.txtOldPassword.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOldPassword.Location = new System.Drawing.Point(285, 81);
+            this.txtOldPassword.Location = new System.Drawing.Point(301, 101);
             this.txtOldPassword.Name = "txtOldPassword";
             this.txtOldPassword.PasswordChar = '*';
             this.txtOldPassword.Size = new System.Drawing.Size(203, 29);
@@ -105,7 +105,7 @@
             this.lblOldPassword.AutoSize = true;
             this.lblOldPassword.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOldPassword.ForeColor = System.Drawing.Color.Wheat;
-            this.lblOldPassword.Location = new System.Drawing.Point(28, 79);
+            this.lblOldPassword.Location = new System.Drawing.Point(28, 101);
             this.lblOldPassword.Name = "lblOldPassword";
             this.lblOldPassword.Size = new System.Drawing.Size(232, 31);
             this.lblOldPassword.TabIndex = 9;
@@ -114,7 +114,7 @@
             // txtConfirmPassword
             // 
             this.txtConfirmPassword.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(285, 224);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(301, 239);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '*';
             this.txtConfirmPassword.Size = new System.Drawing.Size(203, 29);
@@ -125,7 +125,7 @@
             this.lblConfirmPassword.AutoSize = true;
             this.lblConfirmPassword.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfirmPassword.ForeColor = System.Drawing.Color.Wheat;
-            this.lblConfirmPassword.Location = new System.Drawing.Point(28, 222);
+            this.lblConfirmPassword.Location = new System.Drawing.Point(28, 239);
             this.lblConfirmPassword.Name = "lblConfirmPassword";
             this.lblConfirmPassword.Size = new System.Drawing.Size(218, 31);
             this.lblConfirmPassword.TabIndex = 7;
@@ -145,7 +145,7 @@
             // txtPass
             // 
             this.txtPass.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.Location = new System.Drawing.Point(285, 148);
+            this.txtPass.Location = new System.Drawing.Point(301, 172);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(203, 29);
@@ -154,7 +154,7 @@
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(285, 20);
+            this.txtUsername.Location = new System.Drawing.Point(301, 34);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(203, 29);
             this.txtUsername.TabIndex = 3;
@@ -166,7 +166,7 @@
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.Wheat;
-            this.lblUsername.Location = new System.Drawing.Point(28, 20);
+            this.lblUsername.Location = new System.Drawing.Point(28, 34);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(189, 31);
             this.lblUsername.TabIndex = 2;
@@ -177,7 +177,7 @@
             this.lblPass.AutoSize = true;
             this.lblPass.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPass.ForeColor = System.Drawing.Color.Wheat;
-            this.lblPass.Location = new System.Drawing.Point(28, 148);
+            this.lblPass.Location = new System.Drawing.Point(28, 172);
             this.lblPass.Name = "lblPass";
             this.lblPass.Size = new System.Drawing.Size(184, 31);
             this.lblPass.TabIndex = 1;

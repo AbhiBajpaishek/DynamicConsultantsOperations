@@ -14,7 +14,7 @@ namespace DynamicConsultantsOperations
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DashBoardMaster());
+            Application.Run(new Login());
         }
     }
 }
