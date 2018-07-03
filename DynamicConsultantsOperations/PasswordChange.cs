@@ -37,8 +37,12 @@ namespace DynamicConsultantsOperations
                 {
                     if (validationCheck(txtPass.Text, txtConfirmPassword.Text))
                     {
-                        if (db.InsertUpdateDelete("update Tbl_login SET Password = '" + txtPass.Text + "' where Username= '"+txtUsername.Text+"';"))
+                        if (db.InsertUpdateDelete("update Tbl_login SET Password = '" + txtPass.Text + "' where Username= '" + txtUsername.Text + "';"))
+                        {
                             MessageBox.Show("Password Changed Succesfully");
+                            clearFields();
+                        }
+                            
                         else
                             MessageBox.Show("Some Error Occurred");
                     }
@@ -80,6 +84,20 @@ namespace DynamicConsultantsOperations
                 txtConfirmPassword.PasswordChar = '*';
                 hideShowPassword.Text = "Show";
             }
+        }
+
+        private void bodyPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+        void clearFields()
+        {
+            txtConfirmPassword.Text = "";
+            txtOldPassword.Text = "";
+            txtPass.Text = "";
+            txtUsername.Text = "";
         }
     }
 }

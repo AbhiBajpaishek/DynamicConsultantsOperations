@@ -40,13 +40,15 @@
             // 
             // childPanel
             // 
+            this.childPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.childPanel.BackColor = System.Drawing.Color.Maroon;
             this.childPanel.Controls.Add(this.menuStrip1);
-            this.childPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.childPanel.Location = new System.Drawing.Point(0, 0);
             this.childPanel.Name = "childPanel";
             this.childPanel.Size = new System.Drawing.Size(1209, 450);
             this.childPanel.TabIndex = 3;
-            this.childPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.childPanel_Paint);
             // 
             // menuStrip1
             // 

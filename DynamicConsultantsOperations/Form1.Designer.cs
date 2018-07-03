@@ -30,7 +30,6 @@
         {
             this.bodyPanel = new System.Windows.Forms.Panel();
             this.loginPanel = new System.Windows.Forms.Panel();
-            this.btnShowPassword = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
@@ -38,6 +37,7 @@
             this.lblPass = new System.Windows.Forms.Label();
             this.headPanel = new System.Windows.Forms.Panel();
             this.lblHeading = new System.Windows.Forms.Label();
+            this.btnShowPassword = new System.Windows.Forms.CheckBox();
             this.bodyPanel.SuspendLayout();
             this.loginPanel.SuspendLayout();
             this.headPanel.SuspendLayout();
@@ -72,16 +72,6 @@
             this.loginPanel.Size = new System.Drawing.Size(581, 303);
             this.loginPanel.TabIndex = 1;
             this.loginPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.loginPanel_Paint);
-            // 
-            // btnShowPassword
-            // 
-            this.btnShowPassword.Location = new System.Drawing.Point(510, 156);
-            this.btnShowPassword.Name = "btnShowPassword";
-            this.btnShowPassword.Size = new System.Drawing.Size(59, 23);
-            this.btnShowPassword.TabIndex = 6;
-            this.btnShowPassword.Text = "Show Password";
-            this.btnShowPassword.UseVisualStyleBackColor = true;
-            this.btnShowPassword.Click += new System.EventHandler(this.btnShowPassword_Click);
             // 
             // btnLogin
             // 
@@ -157,13 +147,25 @@
             this.lblHeading.Text = "Log In to Continue";
             this.lblHeading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnShowPassword
+            // 
+            this.btnShowPassword.AutoSize = true;
+            this.btnShowPassword.ForeColor = System.Drawing.Color.White;
+            this.btnShowPassword.Location = new System.Drawing.Point(498, 155);
+            this.btnShowPassword.Name = "btnShowPassword";
+            this.btnShowPassword.Size = new System.Drawing.Size(53, 17);
+            this.btnShowPassword.TabIndex = 6;
+            this.btnShowPassword.Text = "Show";
+            this.btnShowPassword.UseVisualStyleBackColor = true;
+            this.btnShowPassword.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.ClientSize = new System.Drawing.Size(800, 505);
             this.Controls.Add(this.bodyPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log In";
@@ -187,7 +189,7 @@
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblPass;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Button btnShowPassword;
+        private System.Windows.Forms.CheckBox btnShowPassword;
     }
 }
 

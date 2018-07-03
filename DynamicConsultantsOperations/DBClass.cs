@@ -40,7 +40,7 @@ namespace DynamicConsultantsOperations
             return dt;
         }
 
-        public bool spUpdate(string name,string email,string age,string gender)
+        public bool spUpdate(string name,string email,string age,string gender,string password)
         {
             SqlCommand cmd = new SqlCommand("updateProcedure", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -48,6 +48,25 @@ namespace DynamicConsultantsOperations
             cmd.Parameters.AddWithValue("@email", email);           
             cmd.Parameters.AddWithValue("@age", age);
             cmd.Parameters.AddWithValue("@gender", gender);
+            cmd.Parameters.AddWithValue("@password", password);
+            if (conn.State == ConnectionState.Closed)
+            {
+                conn.Open();
+            }
+            int res = cmd.ExecuteNonQuery();
+            conn.Close();
+            if (res > 0)
+                return true;
+            else
+                return false;
+        }
+
+
+        public bool spDelete(String mail)
+        {
+            SqlCommand cmd = new SqlCommand("deleteProcedure", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@mail", mail);
             if (conn.State == ConnectionState.Closed)
             {
                 conn.Open();

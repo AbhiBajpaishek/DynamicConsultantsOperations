@@ -13,7 +13,6 @@ namespace DynamicConsultantsOperations
     public partial class DashBoardMaster : Form
     {
         public String uname;
-        DashBoard dashboard = new DashBoard();
         Registration registration = new Registration();
         PasswordChange passwordChange = new PasswordChange();
         public DashBoardMaster()
@@ -23,6 +22,7 @@ namespace DynamicConsultantsOperations
             registration.TopLevel = false;
             registration.Parent = this;
             childPanel.Controls.Add(registration);
+            registration.Dock = DockStyle.Fill;
             registration.Show();
         }
 
@@ -31,31 +31,14 @@ namespace DynamicConsultantsOperations
 
         }
 
-       
-
-        private void childPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-
-        }
-
-        private void registrationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
 
         private void changePassowrdToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
+        {            
             passwordChange.TopLevel = false;
             passwordChange.Parent = this;
             childPanel.Controls.Add(passwordChange);
+            passwordChange.Dock = DockStyle.Fill;
+            //passwordChange.StartPosition = FormStartPosition.CenterScreen;
             passwordChange.Show();
             registration.Hide();
             

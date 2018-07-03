@@ -32,23 +32,22 @@ namespace DynamicConsultantsOperations
                 MessageBox.Show("Passwords didn't match");
             }
             else if(emptyCheck())
-            {
+            {//if the fields aren't empty it will chekc for existing data or fresh registration
                 if(db.ReadBulkData("select Name from Tbl_Registration where Email= '" + txtMail.Text + "';").Rows.Count>0)
-                {
-                    if (db.spUpdate(txtName.Text, txtMail.Text, txtAge.Text, genderCheck()))
+                {//for update
+                    if (db.spUpdate(txtName.Text, txtMail.Text, txtAge.Text, genderCheck(),txtPass.Text))
                             MessageBox.Show("Record Updated");
                         else
                             MessageBox.Show("Some Error Occured");
                     registrationDataGridView.DataSource = db.ReadBulkData(query);
                 }
                 else
-                {
+                {//for fresh registration
                     if (db.spRegistration(txtName.Text, txtMail.Text, txtAge.Text, genderCheck(), txtPass.Text, "Admin"))
                         MessageBox.Show("Registration Succesfull");
                     else
                         MessageBox.Show("Failure");
-                }
-             
+                }             
             }
             registrationDataGridView.DataSource = db.ReadBulkData(query);
             clearFields();
@@ -62,6 +61,7 @@ namespace DynamicConsultantsOperations
             DataTable dt = db.ReadBulkData(query);
             if (e.ColumnIndex == 0)
             {
+                //this is for transferring data to the above edit panel in the form
                 txtName.Text = dt.Rows[e.RowIndex][0].ToString();
                 txtMail.Text = dt.Rows[e.RowIndex][1].ToString();
                 if (dt.Rows[e.RowIndex][2].ToString() == "Male")
@@ -72,7 +72,8 @@ namespace DynamicConsultantsOperations
             }
             else if(e.ColumnIndex==1)
             {
-                    if (db.InsertUpdateDelete("update Tbl_Registration SET Status='InActive' Email='" + dt.Rows[e.RowIndex][1] + "'"))
+                //It doesn't delete records instead turn it inactive
+                    if (db.spDelete(dt.Rows[e.RowIndex][1].ToString()))
                         MessageBox.Show("Record Deleted");
                     else
                         MessageBox.Show("Some Error Occured");
@@ -95,8 +96,7 @@ namespace DynamicConsultantsOperations
                 txtMail.Text = "";
                 txtName.Text = "";
                 txtConfirmPass.Text = "";
-                txtPass.Text = "";
-                
+                txtPass.Text = "";  
             }
 
 
@@ -168,6 +168,11 @@ namespace DynamicConsultantsOperations
                 txtConfirmPass.PasswordChar = '*';
                 btnShowPassword.Text = "Show";
             }
+
+        }
+
+        private void tableLayoutPanel_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

@@ -62,6 +62,17 @@ namespace DynamicConsultantsOperations
 
         private void btnShowPassword_Click(object sender, EventArgs e)
         {
+        
+          
+        }
+
+        private void bodyPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
             if (btnShowPassword.Text == "Show")
             {
                 txtPass.PasswordChar = '\0';
@@ -72,12 +83,6 @@ namespace DynamicConsultantsOperations
                 txtPass.PasswordChar = '*';
                 btnShowPassword.Text = "Show";
             }
-          
-        }
-
-        private void bodyPanel_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

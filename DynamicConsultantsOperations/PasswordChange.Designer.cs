@@ -30,6 +30,7 @@
         {
             this.bodyPanel = new System.Windows.Forms.Panel();
             this.loginPanel = new System.Windows.Forms.Panel();
+            this.hideShowPassword = new System.Windows.Forms.CheckBox();
             this.txtOldPassword = new System.Windows.Forms.TextBox();
             this.lblOldPassword = new System.Windows.Forms.Label();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
@@ -41,7 +42,6 @@
             this.lblPass = new System.Windows.Forms.Label();
             this.headPanel = new System.Windows.Forms.Panel();
             this.lblHeading = new System.Windows.Forms.Label();
-            this.hideShowPassword = new System.Windows.Forms.CheckBox();
             this.bodyPanel.SuspendLayout();
             this.loginPanel.SuspendLayout();
             this.headPanel.SuspendLayout();
@@ -57,12 +57,11 @@
             this.bodyPanel.Name = "bodyPanel";
             this.bodyPanel.Size = new System.Drawing.Size(800, 483);
             this.bodyPanel.TabIndex = 1;
+            this.bodyPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.bodyPanel_Paint);
             // 
             // loginPanel
             // 
-            this.loginPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.loginPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loginPanel.BackColor = System.Drawing.Color.Black;
             this.loginPanel.Controls.Add(this.hideShowPassword);
             this.loginPanel.Controls.Add(this.txtOldPassword);
@@ -79,6 +78,18 @@
             this.loginPanel.Size = new System.Drawing.Size(581, 354);
             this.loginPanel.TabIndex = 1;
             this.loginPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.loginPanel_Paint);
+            // 
+            // hideShowPassword
+            // 
+            this.hideShowPassword.AutoSize = true;
+            this.hideShowPassword.ForeColor = System.Drawing.Color.White;
+            this.hideShowPassword.Location = new System.Drawing.Point(501, 155);
+            this.hideShowPassword.Name = "hideShowPassword";
+            this.hideShowPassword.Size = new System.Drawing.Size(53, 17);
+            this.hideShowPassword.TabIndex = 11;
+            this.hideShowPassword.Text = "Show";
+            this.hideShowPassword.UseVisualStyleBackColor = true;
+            this.hideShowPassword.CheckedChanged += new System.EventHandler(this.hideShowPassword_CheckedChanged);
             // 
             // txtOldPassword
             // 
@@ -150,6 +161,8 @@
             // 
             // lblUsername
             // 
+            this.lblUsername.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.Wheat;
@@ -182,6 +195,7 @@
             // 
             // lblHeading
             // 
+            this.lblHeading.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblHeading.AutoSize = true;
             this.lblHeading.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeading.ForeColor = System.Drawing.Color.Wheat;
@@ -190,18 +204,7 @@
             this.lblHeading.Size = new System.Drawing.Size(265, 31);
             this.lblHeading.TabIndex = 0;
             this.lblHeading.Text = "Change Your Password";
-            // 
-            // hideShowPassword
-            // 
-            this.hideShowPassword.AutoSize = true;
-            this.hideShowPassword.ForeColor = System.Drawing.Color.White;
-            this.hideShowPassword.Location = new System.Drawing.Point(501, 155);
-            this.hideShowPassword.Name = "hideShowPassword";
-            this.hideShowPassword.Size = new System.Drawing.Size(53, 17);
-            this.hideShowPassword.TabIndex = 11;
-            this.hideShowPassword.Text = "Show";
-            this.hideShowPassword.UseVisualStyleBackColor = true;
-            this.hideShowPassword.CheckedChanged += new System.EventHandler(this.hideShowPassword_CheckedChanged);
+            this.lblHeading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PasswordChange
             // 
