@@ -27,28 +27,31 @@ namespace DynamicConsultantsOperations
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if (validationCheck(txtPass.Text, txtConfirmPass.Text)==false)
+            if (validationCheck(txtPass.Text, txtConfirmPass.Text) == false)
             {
                 MessageBox.Show("Passwords didn't match");
             }
-            else if(emptyCheck()&&txtPass.Text!="")
-            {//if the fields aren't empty it will chekc for existing data or fresh registration
-                if(db.ReadBulkData("select Name from Tbl_Registration where Email= '" + txtMail.Text + "';").Rows.Count>0)
+            else if (emptyCheck() && txtPass.Text != "")
+            {
+                //if the fields aren't empty it will chekc for existing data or fresh registration
+                if (db.ReadBulkData("select Name from Tbl_Registration where Email= '" + txtMail.Text + "';").Rows.Count > 0)
                 {//for update
-                    if (db.spUpdate(txtName.Text, txtMail.Text, txtAge.Text, genderCheck(),txtPass.Text))
-                            MessageBox.Show("Record Updated");
-                        else
-                            MessageBox.Show("Some Error Occured");
+                    if (db.spUpdate(txtName.Text, txtMail.Text, txtAge.Text, genderCheck(), txtPass.Text))
+                        MessageBox.Show("Record Updated");
+                    else
+                        MessageBox.Show("Some Error Occured");
                     registrationDataGridView.DataSource = db.ReadBulkData(query);
                 }
                 else
                 {//for fresh registration
-                    if (db.spRegistration(txtName.Text, txtMail.Text, txtAge.Text, genderCheck(), txtPass.Text,uname))
+                    if (db.spRegistration(txtName.Text, txtMail.Text, txtAge.Text, genderCheck(), txtPass.Text, uname))
                         MessageBox.Show("Registration Succesfull");
                     else
                         MessageBox.Show("Failure");
-                }             
+                }
             }
+            else
+                MessageBox.Show("Fill Blank Columns");
             registrationDataGridView.DataSource = db.ReadBulkData(query);
             clearFields();
         }

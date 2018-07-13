@@ -33,6 +33,7 @@
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.topPanel = new System.Windows.Forms.Panel();
+            this.btnShowPassword = new System.Windows.Forms.CheckBox();
             this.btnRegister = new System.Windows.Forms.Button();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.txtAge = new System.Windows.Forms.TextBox();
@@ -49,7 +50,6 @@
             this.femaleRadio = new System.Windows.Forms.RadioButton();
             this.maleRadio = new System.Windows.Forms.RadioButton();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.btnShowPassword = new System.Windows.Forms.CheckBox();
             this.bodyPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.registrationDataGridView)).BeginInit();
             this.topPanel.SuspendLayout();
@@ -118,6 +118,19 @@
             this.topPanel.Size = new System.Drawing.Size(931, 444);
             this.topPanel.TabIndex = 0;
             this.topPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.topPanel_Paint);
+            // 
+            // btnShowPassword
+            // 
+            this.btnShowPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnShowPassword.AutoSize = true;
+            this.btnShowPassword.ForeColor = System.Drawing.Color.Black;
+            this.btnShowPassword.Location = new System.Drawing.Point(835, 213);
+            this.btnShowPassword.Name = "btnShowPassword";
+            this.btnShowPassword.Size = new System.Drawing.Size(53, 17);
+            this.btnShowPassword.TabIndex = 7;
+            this.btnShowPassword.Text = "Show";
+            this.btnShowPassword.UseVisualStyleBackColor = true;
+            this.btnShowPassword.CheckedChanged += new System.EventHandler(this.btnShowPassword_CheckedChanged);
             // 
             // btnRegister
             // 
@@ -308,18 +321,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(335, 24);
             this.txtName.TabIndex = 6;
-            // 
-            // btnShowPassword
-            // 
-            this.btnShowPassword.AutoSize = true;
-            this.btnShowPassword.ForeColor = System.Drawing.Color.Black;
-            this.btnShowPassword.Location = new System.Drawing.Point(835, 213);
-            this.btnShowPassword.Name = "btnShowPassword";
-            this.btnShowPassword.Size = new System.Drawing.Size(53, 17);
-            this.btnShowPassword.TabIndex = 7;
-            this.btnShowPassword.Text = "Show";
-            this.btnShowPassword.UseVisualStyleBackColor = true;
-            this.btnShowPassword.CheckedChanged += new System.EventHandler(this.btnShowPassword_CheckedChanged);
             // 
             // Registration
             // 

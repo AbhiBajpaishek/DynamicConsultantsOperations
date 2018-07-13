@@ -8,7 +8,6 @@ namespace DynamicConsultantsOperations
 {
     static class Program
     {
-      
         [STAThread]
         static void Main()
         {

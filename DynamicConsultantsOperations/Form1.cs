@@ -23,8 +23,7 @@ namespace DynamicConsultantsOperations
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (authentication(txtUsername.Text, txtPass.Text))
-            {
-                
+            {    
                 username = txtUsername.Text;
                 DashBoardMaster.uname = username;
                 DashBoardMaster dashBoard = new DashBoardMaster();
